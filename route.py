@@ -10,17 +10,9 @@ import tempfile
 tempdirectory = tempfile.gettempdir()
 # define the name of the directory to be created
 
-# try:
-#     os.mkdir(path)
-# except OSError:
-#     print ("Creation of the directory %s failed" % path)
-# else:
-#     print ("Successfully created the directory %s " % path)
-# app.config["IMAGE_UPLOADS"] = "/mnt/c/wsl/projects/pythonise/tutorials/flask_series/app/app/static/img/uploads"
- 
+
 model = tf.keras.models.load_model('SkinCD') 
 app = Flask(__name__) 
-# os.makedir('/images')
 
   
 @app.route('/') 
@@ -36,10 +28,7 @@ def finds(sfname):
     print(prediction) 
     return prediction
 
-    # return ''
 
-# def allowed_file(filename):
-#     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS`
   
 @app.route('/uploader', methods = ['GET', 'POST']) 
 def upload_file(): 
@@ -52,24 +41,13 @@ def upload_file():
             print ("File exist")
         else:
             print ("File not exist")
-        # f = request.files['file']
-        # # print(f, f.filename) 
 
-        # f.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(f.filename))) 
         val = finds(loc) 
+        if val < 0.5:
+            val = 'Benign'
+        else:
+            val = 'Malignant'
         return render_template('predict.html', ss = val) 
 
-    # if request.method == 'POST':
-    #     file = request.files['file']
-    #     if file and allowed_file(file.filename):
-    #         filename = secure_filename(file.filename)
-    #         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-
-    #         file.stream.seek(0) 
-    #         myfile = file.file 
-    #         dataframe = pd.read_csv(myfile)
-    #         return
-    #     else:
-    #         return "Not Allowed"  
 if __name__ == '__main__': 
     app.run() 
