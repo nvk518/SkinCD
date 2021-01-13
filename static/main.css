@@ -1,0 +1,15 @@
+html {
+  margin: 20px 30px;
+
+  background-color: white;
+  background-attachment: fixed;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  background-color: transparent;
+}

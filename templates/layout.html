@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <div id="fb-root"></div>
+  <script
+    async
+    defer
+    crossorigin="anonymous"
+    src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=2519747488310388&autoLogAppEvents=1"
+  ></script>
+
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{{ url_for('static', filename='main.css') }}"
+  />
+  <head>
+    <title>SkinCD</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a
+          class="navbar-brand top font-weight-bold text-danger"
+          href="{{ url_for('home') }}"
+          >SkinCD</a
+        >
+      </nav>
+    </header>
+    <br />
+
+    {% block content %}{% endblock %}
+  </body>
+  <footer class="main-footer">
+    <nav class="nav">
+      <ul class="list-group">
+        <li style="background-color: transparent" class="list-group-item">
+          &copy;
+          <a href="http://neilkamdar.com/" target="_blank" style="color: black"
+            >Neil Kamdar</a
+          >
+          2021
+        </li>
+      </ul>
+    </nav>
+  </footer>
+</html>

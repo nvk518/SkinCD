@@ -16,7 +16,8 @@ app = Flask(__name__)
 
   
 @app.route('/') 
-def upload_f(): 
+@app.route('/home')
+def home(): 
     return render_template('upload.html') 
   
 def finds(sfname): 
