@@ -38,6 +38,7 @@
         <a
           class="navbar-brand top font-weight-bold text-danger"
           href="{{ url_for('home') }}"
+          style="font-size: 60px"
           >SkinCD</a
         >
       </nav>
@@ -47,11 +48,16 @@
     {% block content %}{% endblock %}
   </body>
   <footer class="main-footer">
-    <nav class="nav">
-      <ul class="list-group">
-        <li style="background-color: transparent" class="list-group-item">
+    <nav>
+      <ul style="margin-top: 20px; text-align: left; margin-left: 30px">
+        <li style="margin-right: 40px: ; display: inline;">
+          <a href="https://github.com/nvk518"
+            ><img src="static/GitHub-Mark-64px.png" width="50" height="50"
+          /></a>
+        </li>
+        <li style="display: inline; background-color: transparent">
           &copy;
-          <a href="http://neilkamdar.com/" target="_blank" style="color: white"
+          <a href="http://neilkamdar.com/" target="_blank" style="color: white; display: inline;"
             >Neil Kamdar</a
           >
           2021
